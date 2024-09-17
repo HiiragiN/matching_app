@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Login Form</title>
+    <script src="script.js"></script>
+    <link href="{{ url_for('static', path='/login.css') }}" rel="stylesheet">
+</head>
+<body>
+<h2>Login</h2>
+<div class="login">
+	<form action="../main" method="post">
+		<h5>Username</h5>
+		<input type="text" name="uid" placeholder="userID">
+		<h5>Password</h5>
+		<input name="passcode" placeholder="password" type="text">
+		<input type="submit">
+	</form>
+</div>
+</body>
+</html>

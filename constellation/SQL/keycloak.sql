@@ -1,0 +1,1 @@
+GRANT ALL privileges on *.* to `keycloak`@`%`;

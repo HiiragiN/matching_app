@@ -1,0 +1,46 @@
+<html>
+<hrad>
+    <title>User details</title>
+    <link href="{{ url_for('static', path='/user.css') }}" rel="stylesheet">
+    <!-- <script type="text/javascript" src="./user.js"></script> -->
+</hrad>
+<body>
+    <h1>Full Name: {{ user_fullname }}</h1>
+    <div>
+        <p>Read Name: {{ user_readname }}</p>
+        <p>Email: {{ user_email }}</p>
+        <p>Hobby: {{ hobby }}</p>
+        <p>Age: {{ age }}</p>
+        <p>Birthday: {{ user_birthday }}</p>
+        <p>Constellation: {{ user_starsign }}</p>
+        <p>Gender: {{ gender }}</p>
+        <p>Job: {{ job }}</p>
+        <p>Income: {{ income }}</p>
+    </div>
+    <div>
+<!--        <button type="button" onclick="location.href='http://127.0.0.1:8000/user/{{ user_id }}?matching_id={{ user_id }}'">-->
+<!--            マッチング-->
+<!--        </button>-->
+        <button type="button" onclick="location.href='http://127.0.0.1:8000/'">
+            Welcome page
+        </button>
+        <a href="http://localhost:8000/logout">
+            <button type="button">Logout</button>
+        </a>
+    </div>
+    <h2>マッチング一覧</h2>
+    <div>
+        <ul>
+            {% for i in match_data %}
+            <dl>
+                {% for n, m in i.items() %}
+                <dt>{{ n }}</dt>
+                <dd>{{ m }}</dd>
+                {% endfor %}
+                <hr>
+            </dl>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
